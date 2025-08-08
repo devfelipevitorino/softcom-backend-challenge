@@ -5,17 +5,21 @@ export default (sequelize, Sequelize) => {
         username: {
             type: Sequelize.STRING,
             unique: true,
+            allowNull: false
         },
         email: {
             type: Sequelize.STRING,
             unique: true,
+            allowNull: false
         },
         cnpj: {
             type: Sequelize.STRING,
             unique: true,
+            allowNull: false
         },
         password: {
-            type: Sequelize.STRING
+            type: Sequelize.STRING,
+            allowNull: false
         }
     });
 
