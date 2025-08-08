@@ -33,7 +33,7 @@ db.user.belongsToMany(db.role, {
     as: "roles",
 });
 
-db.user.hasMany(db.item, { foreignKey: "userId", as: "items" });
+db.user.hasMany(db.item, { foreignKey: "userId", as: "itens" });
 db.item.belongsTo(db.user, { foreignKey: "userId", as: "user" });
 
 db.ROLES = ["user", "admin", "moderator"];

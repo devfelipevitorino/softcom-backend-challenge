@@ -1,7 +1,7 @@
 import { Sequelize } from "sequelize";
 
 export default (sequelize ,Sequelize) => {
-    const Item = sequelize.define("items", {
+    const Item = sequelize.define("itens", {
         name: {
             type: Sequelize.STRING,
             Unique: true,
