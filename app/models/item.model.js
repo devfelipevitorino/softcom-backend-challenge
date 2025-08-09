@@ -13,6 +13,10 @@ export default (sequelize ,Sequelize) => {
         price: {
             type: Sequelize.DECIMAL(5,2),
             allowNull: false
+        },
+        userId: {
+            type: Sequelize.INTEGER,
+            allowNull: false
         }
     });
 
