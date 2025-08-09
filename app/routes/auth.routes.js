@@ -6,7 +6,7 @@ import {
 } from "../middlewares/verifySignUp.js";
  
 const router = express.Router();
- 
+
 router.post("/auth/sign_up", [checkDuplicateUsernameOrEmailOrCnpj, checkRolesExisted], signup);
  
 router.post("/auth/sign_in", signin);

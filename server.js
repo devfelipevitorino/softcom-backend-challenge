@@ -4,8 +4,17 @@ import db from "./app/models/index.js";
 import authRoutes from "./app/routes/auth.routes.js";
 import userRoutes from "./app/routes/user.routes.js";
 import itemRoutes from "./app/routes/item.routes.js";
+import swaggerUi from "swagger-ui-express";
+import fs from "fs";
+import path from "path";
 
 const app = express();
+
+const swaggerFile = JSON.parse(
+  fs.readFileSync(path.resolve("./swagger-output.json"), "utf-8")
+);
+
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerFile));
 
 const corsOptions = {
     origin: "http://localhost:8081"
@@ -44,5 +53,6 @@ db.sequelize.sync({ force: false }).then(() => {
     initial();
     app.listen(PORT, () => {
         console.log(`Servidor rodando na porta ${PORT}`);
+          console.log(`Documentação em http://localhost:${PORT}/api-docs`);
     });
 });

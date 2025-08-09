@@ -8,7 +8,7 @@ const { user: User, role: Role } = db;
  
 export const signup = async (req, res) => {
     try {
-        const { username, email, cnpj, password, roles } = req.body;
+        const { username, email, cnpj, password } = req.body;
  
         const hashedPassword = await bcrypt.hash(password, 8);
  

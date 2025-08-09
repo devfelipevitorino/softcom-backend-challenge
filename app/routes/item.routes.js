@@ -13,12 +13,12 @@ const router = express.Router();
 
 router.get("/user/itens", [verifyToken], itensList);
 
-router.get("/user/itens/:id", [verifyToken], itemFindById);
+router.get("/user/item/:id", [verifyToken], itemFindById);
 
-router.post("/user/itens", [verifyToken], itemCreate);
+router.post("/user/item", [verifyToken], itemCreate);
 
-router.put("/user/itens/:id", [verifyToken], itemUpdate);
+router.put("/user/item/:id", [verifyToken], itemUpdate);
 
-router.delete("/user/itens/:id", [verifyToken], itemDelete);
+router.delete("/user/item/:id", [verifyToken], itemDelete);
 
 export default router;
